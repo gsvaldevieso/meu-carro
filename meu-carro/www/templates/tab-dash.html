@@ -1,0 +1,20 @@
+<ion-view view-title="Buscar carros">
+  <ion-content class="padding">
+   <div class="bar bar-header item-input-inset">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+      <input type="search" ng-model="filtroVeiculo" placeholder="Pesquisar placa, carro, dono...">
+    </label>
+    <button class="button">
+      Cancelar
+    </button>
+  </div>
+  <div class="list">
+      <a ng-repeat="carro in listaCarros | filter:filtroVeiculo" class="item item-avatar" href="#">
+        <img src="{{carro.imagem}}">
+        <h3>{{carro.placa}}</h3>
+        <p>{{carro.dono}} - {{carro.carro}}</p>
+      </a>
+  </div>
+  </ion-content>
+</ion-view>
